@@ -1,6 +1,23 @@
 import 'package:scoped_model/scoped_model.dart';
-import 'package:flutter_global_variable/scoped_models/user.dart';
 
-class MainModel extends Model with User {
+class MainModel extends Model {
+  String _name = "";
+  int _count = 0;
 
+  String get name {
+    return _name;
+  }
+
+  int get count {
+    return _count;
+  }
+
+  void updateName(String name) {
+    _name = name;
+  }
+
+  void incrementCount() {
+    _count += 1;
+    notifyListeners();
+  }
 }
