@@ -5,16 +5,11 @@ import 'package:flutter_global_variable/pages/page2.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  final MainModel _model = MainModel();
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final MainModel _model = MainModel();
+
     return ScopedModel<MainModel>(
         model: _model,
         child: MaterialApp(
@@ -27,23 +22,18 @@ class _MyAppState extends State<MyApp> {
   }
 }
 
-class MyHomePage extends StatefulWidget {
+class MyHomePage extends StatelessWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
 
   final String title;
 
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return ScopedModelDescendant<MainModel>(
         builder: (BuildContext context, Widget child, MainModel model) {
       return Scaffold(
         appBar: AppBar(
-          title: Text(widget.title),
+          title: Text(title),
         ),
         body: Center(
           child: Column(

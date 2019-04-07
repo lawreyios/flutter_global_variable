@@ -3,12 +3,7 @@ import 'package:scoped_model/scoped_model.dart';
 import 'package:flutter_global_variable/scoped_models/main.dart';
 import 'package:flutter_global_variable/pages/page3.dart';
 
-class Page2 extends StatefulWidget {
-  @override
-  _Page2State createState() => _Page2State();
-}
-
-class _Page2State extends State<Page2> {
+class Page2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
